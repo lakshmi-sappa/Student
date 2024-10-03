@@ -10,20 +10,24 @@ public class StudentService {
 	@Autowired
 	private StudentRepository sr;
 	
-	public void insertStudent(StudentEntity se) {
+	public void insertStudent(StudentEntity se)
+	{
 		sr.save(se)	;
 	}
-	public List<StudentEntity>getAllStudent() {
+	public List<StudentEntity>getAllStudent()
+	{
 		
 		return sr.findAll();
 	}
-	public Optional<StudentEntity>findById(Long StudId) {
+	public Optional<StudentEntity>findById(Long StudId)
+	{
 		
 		return sr.findById(StudId);
 	}
 	
 
-	public StudentEntity save(StudentEntity studentEntity) {
+	public StudentEntity save(StudentEntity studentEntity) 
+	{
 		return sr.save(studentEntity);
 		
 	}
@@ -31,12 +35,14 @@ public class StudentService {
 		sr.delete(studentEntity);
 		
 	}
-	public List<StudentEntity> sortByName(){
+	public List<StudentEntity> sortByName()
+	{
 
 		return sr.findAndOrderByFName();
 
      }
-	 public List<StudentEntity> findByLname(String lname) {
+	 public List<StudentEntity> findByLname(String lname) 
+	 {
 	        return sr.findByLname(lname);
 	        
 	
